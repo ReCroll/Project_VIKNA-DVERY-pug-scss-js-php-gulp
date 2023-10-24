@@ -1912,7 +1912,7 @@ main {
   background-color: #2EC1AC;
 }
 
-.products__container .products__wrapper .product__content .card__info-wrapper .card__info {
+.card__info-wrapper .card__info {
   padding: 1rem;
 }
 
