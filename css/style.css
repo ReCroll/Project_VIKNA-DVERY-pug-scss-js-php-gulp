@@ -4055,16 +4055,23 @@ main {
   .header .menu__body {
     position: relative;
     position: fixed;
-    overflow-y: scroll;
     z-index: 13;
     bottom: 0;
     width: 100%;
     left: -100%;
-    height: calc(100% - 2.8125rem - 2.8125rem);
+    height: 100%;
     background-color: #E89F71;
     opacity: 0.95;
-    padding: 10px 30px 30px 30px;
+    padding: 10px 30px 30px 0;
     transition: left 0.3s ease 0s;
+  }
+
+  .header .menu {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: calc(100% - 2.8125rem - 2.8125rem);
+    overflow-y: hidden;
   }
 
   .header .menu__arrows {
@@ -4121,8 +4128,12 @@ main {
 
   .header .menu__body._active {
     left: 0%;
-    overflow-y: scroll;
     transition: left 0.3s ease 0s;
+  }
+
+  .header .menu__body._active .menu {
+    padding-left: 1.875rem;
+    overflow-y: scroll;
   }
 
   .header .header__menu-list > li:last-child {
