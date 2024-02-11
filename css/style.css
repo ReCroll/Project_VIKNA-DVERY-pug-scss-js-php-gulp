@@ -4053,17 +4053,18 @@ main {
   }
 
   .header .menu__body {
+    position: relative;
     position: fixed;
+    overflow-y: scroll;
     z-index: 13;
-    top: 0;
-    left: -100%;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    left: -100%;
+    height: calc(100% - 2.8125rem - 2.8125rem);
     background-color: #E89F71;
     opacity: 0.95;
-    padding: 90px 30px 30px 30px;
+    padding: 10px 30px 30px 30px;
     transition: left 0.3s ease 0s;
-    overflow: auto;
   }
 
   .header .menu__arrows {
@@ -4081,10 +4082,6 @@ main {
   .header .menu__arrows:hover,
   .header .menu__arrows:hover {
     animation: 500ms linear infinite alternate running pulsing-right;
-  }
-
-  .header .menu__body._active {
-    left: 0;
   }
 
   .header .menu__list {
@@ -4123,7 +4120,8 @@ main {
   }
 
   .header .menu__body._active {
-    left: 0;
+    left: 0%;
+    overflow-y: scroll;
     transition: left 0.3s ease 0s;
   }
 
@@ -4139,6 +4137,28 @@ main {
     flex: 1 0 auto;
     -moz-column-gap: 1.25rem;
          column-gap: 1.25rem;
+  }
+
+  .header__container::after {
+    content: "";
+    position: fixed;
+    z-index: 13;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: calc(2.8125rem + 2.8125rem);
+    background-color: #E89F71;
+    opacity: 0.95;
+    transition: left 0.3s ease 0s;
+  }
+
+  .header__container._active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: left 0.3s ease 0s;
   }
 }
 
